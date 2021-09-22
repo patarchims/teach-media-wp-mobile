@@ -27,7 +27,11 @@ class _HomePageState extends State<HomePage> {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Teach Media'),
+        title: Center(
+            child: Image.asset(
+          iconsAssets + 'logo_teachmedia.png',
+          width: 200,
+        )),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -62,8 +66,8 @@ class _HomePageState extends State<HomePage> {
           });
         },
         children: [
-          Container(color: Colors.red),
-          Container(color: Colors.yellow),
+          FilterByCategoryPage(),
+          CategoryPage(),
           Container(color: Colors.purple)
         ],
       ),
