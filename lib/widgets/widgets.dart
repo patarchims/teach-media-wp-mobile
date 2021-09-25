@@ -10,3 +10,4 @@ part 'category_card.dart';
 part 'articel_card.dart';
 part 'header_widget.dart';
 part 'padding_container.dart';
+part 'chace_image_widget.dart';

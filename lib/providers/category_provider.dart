@@ -25,4 +25,17 @@ class CategoryProvider extends ChangeNotifier {
       return <CategoryDetailModel>[];
     }
   }
+
+  getPostByCategoryAndPage(int id, int page) async {
+    var result = await http.get(Uri.parse(ApiDb.BASE_URL +
+        "posts?categories=${id.toInt()}&page=${page.toInt()}"));
+    if (result.statusCode == 200) {
+      List data = jsonDecode(result.body);
+      List<CategoryDetailModel> categoryDetailModel =
+          data.map((e) => CategoryDetailModel.fromJson(e)).toList();
+      return categoryDetailModel;
+    } else {
+      return <CategoryDetailModel>[];
+    }
+  }
 }

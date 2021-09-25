@@ -42,7 +42,6 @@ class _HomePageState extends State<HomePage> {
         selectedLabelStyle: textTheme.caption,
         unselectedLabelStyle: textTheme.caption,
         onTap: (index) {
-          // Respond to item press.
           setState(() {
             bottomNaBarIndex = index;
             pageController.jumpToPage(index);
@@ -66,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           });
         },
         children: [
-          FilterByCategoryPage(),
+          DashboardPage(),
           CategoryPage(),
           Container(color: Colors.purple)
         ],
